@@ -1,17 +1,18 @@
-# Nome do projeto
-Escreva um ou dois  parágrafo resumindo o objetivo do seu projeto.
+# Finny
+A gestão financeira é um problema grande para todos, seja fazendo o controle de entradas e saídas, planejar investimentos, e analisar as possibilidades de organização. A fim de resolver esse problema nós criamos o Finny, o seu novo assistente financeiro.
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
+* Sol Quaresma Crisóstomo
 * Nome completo do aluno 2
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Simone Alves Nogueira
+* Danilo Boechat Seufitelli
+* Diego Augusto de Faria Barros
 
 ## Instruções de utilização
 
