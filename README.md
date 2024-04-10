@@ -1,5 +1,5 @@
 # Finny
-A gestão financeira é um problema grande para todos, seja fazendo o controle de entradas e saídas, planejar investimentos, e analisar as possibilidades de organização. A fim de resolver esse problema nós criamos o Finny, o seu novo assistente financeiro.
+A gestão financeira é um problema grande para todos, seja ao fazer o controle de entradas e saídas, planejar investimentos, e analisar as possibilidades de organização. A fim de auxiliar nessas questões, nós criamos o Finny, o seu novo assistente financeiro.
 
 ## Alunos integrantes da equipe
 
