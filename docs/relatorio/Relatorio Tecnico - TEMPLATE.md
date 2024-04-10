@@ -196,8 +196,19 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| Cadastro de movimentações financeiras | ALTA | 
+|RF-002| Tela de acompanhamento de saldo X despesas | ALTA | 
+|RF-003| Simnular investimentos | ALTA | 
+|RF-004| Aba de educação sobre finanças | MÉDIA | 
+|RF-005| Receber alertas de pagamentos pendentes | MÉDIA | 
+|RF-006| Sugestão de investimentos | MÉDIA | 
+|RF-006| Visualizar Gráficos Ilustrativos | ALTA | 
+|RF-007| Sugerir conteúdos sobre finaças para o site | BAIXA | 
+|RF-008| Definir Entradas e saídas recorrentes | MÉDIA | 
+|RF-009| Informes financeiros mensais | MÉDIA | 
+|RF-010| Categorizar despesas | MÉDIA | 
+|RF-011| Resumos financeiros mensais | MÉDIA | 
+|RF-012| Alertas de pagamentos pendentes | BAIXA | 
 
 
 ### Requisitos não Funcionais
