@@ -4,7 +4,7 @@ A gestão financeira é um problema grande para todos, seja ao fazer o controle 
 ## Alunos integrantes da equipe
 
 * Sol Quaresma Crisóstomo
-* Nome completo do aluno 2
+* Nícolas Araújo Fonseca Pimenta
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 
