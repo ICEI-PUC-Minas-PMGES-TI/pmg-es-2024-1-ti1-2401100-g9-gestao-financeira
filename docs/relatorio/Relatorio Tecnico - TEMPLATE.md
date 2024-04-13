@@ -167,13 +167,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Projeto de Interface
 
-......  COLOQUE AQUI O SEU TEXTO DE INTRODUÇÃO ......
-
-> Apresente as principais interfaces da solução. Discuta como 
-> foram elaboradas de forma a atender os requisitos funcionais, não
-> funcionais e histórias de usuário abordados nas [Especificações do
-> Projeto](#especificações-do-projeto).
-
+Aqui segue o projeto de interfaces. Usamos templates de gestão financeira como base para a nossa organização, e os protótipos foram feitos na plataforma Figma.
 ## User Flow
 
 ![image](https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2024-1-ti1-2401100-g9-gestao-financeira/assets/72227382/d3fb94cc-3e1e-46d1-9059-35e1f242e2bf)
@@ -199,83 +193,53 @@ Para a gestão de projetos, vamos utilizar o SCRUM, com reuniões de planejament
 
 ## Divisão de Papéis
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Nossa divisão de papéis é a seguinte
 
-> Apresente a divisão de papéis e tarefas entre os membros do grupo.
->
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
+* Tech Lead e Scrum Master: Sol Quaresma Crisóstomo
+* Desenvolvedores: Gabriel Azeredo Ramos Souza, Henrique Moreira Gomes de Carvalho, Marcos Henrique Aguiar França, Matheus Ruas Gazire Xavier, Nícolas Araújo Fonseca Pimenta.
 
 ## Ferramentas
 
-......  COLOQUE AQUI O SEU TEXTO - SIGA O EXEMPLO DA TABELA ABAIXO  ......
-
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Processo de Design Thinkgin  | Miro |  https://miro.com/XXXXXXX | 
-|Repositório de código | GitHub | https://github.com/XXXXXXX | 
-|Hospedagem do site | Heroku |  https://XXXXXXX.herokuapp.com | 
-|Protótipo Interativo | MavelApp ou Figma | https://figma.com/XXXXXXX | 
+|Processo de Design Thinkgin  | Miro |  https://miro.com/app/board/uXjVNiWnpHo=/ | 
+|Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2024-1-ti1-2401100-g9-gestao-financeira | 
+|Protótipo Interativo | MavelApp ou Figma | https://www.figma.com/file/IhMlhluGKRTQhptgQpF5GZ/Project-G9?type=design&node-id=0%3A1&mode=design&t=2sgymf9iEOgLq3IT-1 | 
 
->
-> Liste as ferramentas empregadas no desenvolvimento do
-> projeto, justificando a escolha delas, sempre que possível.
-> 
-> As ferramentas empregadas no projeto são:
-> 
-> - Editor de código.
-> - Ferramentas de comunicação
-> - Ferramentas de diagramação
-> - Plataforma de hospedagem
-> 
-> O editor de código foi escolhido porque ele possui uma integração com o
-> sistema de versão. As ferramentas de comunicação utilizadas possuem
-> integração semelhante e por isso foram selecionadas. Por fim, para criar
-> diagramas utilizamos essa ferramenta por melhor captar as
-> necessidades da nossa solução.
-> 
-> **Links Úteis - Hospedagem**:
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Crie seu Site com o HostGator](https://www.hostgator.com.br/como-publicar-seu-site)
-> - [GoDady](https://br.godaddy.com/how-to)
-> - [GitHub Pages](https://pages.github.com/)
+As ferramentas empregadas no projeto são:
+- VS Code (Editor de código).
+- Discord (Comunicador).
+- Figma (Diagramador).
+- Heroku (Hospedagem).
+- Git (Versionamento).
+- Github (Repositório de código).
+ 
+O editor de código foi escolhido porque ele possui uma integração com o sistema de versão (Git).
+As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas.
+Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
 
 ## Controle de Versão
 
-......  COLOQUE AQUI O SEU TEXTO ......
 
-> Discuta como a configuração do projeto foi feita na ferramenta de
-> versionamento escolhida. Exponha como a gerência de tags, merges,
-> commits e branchs é realizada. Discuta como a gerência de issues foi
-> realizada.
-> A ferramenta de controle de versão adotada no projeto foi o
-> [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-> foi utilizado para hospedagem do repositório `upstream`.
-> 
-> O projeto segue a seguinte convenção para o nome de branchs:
-> 
-> - `master`: versão estável já testada do software
-> - `unstable`: versão já testada do software, porém instável
-> - `testing`: versão em testes do software
-> - `dev`: versão de desenvolvimento do software
-> 
-> Quanto à gerência de issues, o projeto adota a seguinte convenção para
-> etiquetas:
-> 
-> - `bugfix`: uma funcionalidade encontra-se com problemas
-> - `enhancement`: uma funcionalidade precisa ser melhorada
-> - `feature`: uma nova funcionalidade precisa ser introduzida
->
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
-> - [5 Git Workflows & Branching Strategy to deliver better code](https://zepel.io/blog/5-git-workflows-to-improve-development/)
->
-> **Exemplo - GitHub Feature Branch Workflow**:
->
-> ![Exemplo de Wireframe](images/Github-Workflow.png)
+ A ferramenta de controle de versão adotada no projeto foi o
+ [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
+ foi utilizado para hospedagem do repositório `upstream`.
+ 
+ O projeto segue a seguinte convenção para o nome de branchs:
+ 
+ - `master`: versão estável já testada do software
+ - `unstable`: versão já testada do software, porém instável
+ - `testing`: versão em testes do software
+ - `dev`: versão de desenvolvimento do software
+ 
+ Quanto à gerência de issues, o projeto adota a seguinte convenção para
+ etiquetas:
+ 
+ - `bugfix`: uma funcionalidade encontra-se com problemas
+ - `enhancement`: uma funcionalidade precisa ser melhorada
+ - `feature`: uma nova funcionalidade precisa ser introduzida
+
+
 
 # **############## SPRINT 1 ACABA AQUI #############**
 
