@@ -202,7 +202,7 @@ Nossa divisão de papéis é a seguinte
 
 | Ambiente  | Plataforma              |Link de Acesso |
 |-----------|-------------------------|---------------|
-|Processo de Design Thinkgin  | Miro |  https://miro.com/app/board/uXjVNiWnpHo=/ | 
+|Processo de Design Thinking  | Miro |  https://miro.com/app/board/uXjVNiWnpHo=/ | 
 |Repositório de código | GitHub | https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2024-1-ti1-2401100-g9-gestao-financeira | 
 |Protótipo Interativo | Figma | https://www.figma.com/file/IhMlhluGKRTQhptgQpF5GZ/Project-G9?type=design&node-id=0%3A1&mode=design&t=2sgymf9iEOgLq3IT-1 | 
 
