@@ -1,0 +1,124 @@
+/*
+Cores
+botão: #6FEA7D
+menu: #DFF7E2
+animação: #00D09E
+
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0E3E3E;
+    font-family: Arial, sans-serif;
+    color: #DFF7E2;
+    position: relative; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: none; 
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+#notification {
+    position: absolute; 
+    top: 5px; 
+    right: 20px;
+    border-radius: 100%;
+    background-color:#DFF7E2 ; 
+    cursor: pointer;
+    width: 45px; 
+    height: 45px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#icon1 {
+    width: 120%; 
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button#sugerir {
+    background-color: #6FEA7D;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#sugerir:hover {
+    background-color: #5cd08f;
+}
+
+footer {
+    /*background-color: #DFF7E2;*/
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+/* Corrige o estilo das setinhas nos inputs do tipo number */
+input[type='number'] {
+    /* Firefox */
+    -moz-appearance: textfield;
+    /* WebKit (Safari/Chrome) */
+    -webkit-appearance: textfield;
+    /* Internet Explorer/Edge */
+    appearance: textfield;
+}
+
+/* Remove as setinhas do input do tipo number no WebKit (Safari/Chrome) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+span{
+    display: none;
+    font-size: 12px;
+    margin: 3px;
+    color: #f81212;
+}
