@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestão de Investimento</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/script/script.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Sugestão de Investimento</h1>
+            <button id="notification"><img id="icon1" src="/images/packard-bell.png"></button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div id="form">
+                <div class="container">
+                    <h2>Objetivo Financeiro</h2>
+                    <input type="text" class="valor required" placeholder="R$00,00" onblur="Validation(this)">
+                    <span class="span-required">Campo Vazio!</span>
+                </div>
+                <div class="container">
+                    <h2>Meses Disponíveis para o Investimento</h2>
+                    <input type='number' class="required numN" id="mesesInput" onblur="Validation(this)">
+                    <span class="span-required" id="mesesError">Campo Vazio!</span>
+                </div>
+                
+                <div class="container">
+                    <h2>Escolha o Risco de Investimento</h2>
+                    <select>
+                        <option value="1">Alto</option>
+                        <option value="2">Baixo</option>
+                    </select>
+                </div>
+                <div class="container">
+                    <h2>Valor dos Aportes</h2>
+                    <input type="text" class="valor required" placeholder="R$00,00" onblur="Validation(this)">
+                    <span class="span-required">Campo Vazio!</span>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="result-title">Sugestão:</h2>
+                <p class="result"></p>
+                <button id="sugerir">Sugerir</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sugestão de Investimento </p>
+        </div>
+    </footer>
+</body>
+
+</html>
