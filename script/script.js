@@ -51,6 +51,40 @@ document.getElementById('sugerir').addEventListener('click', function(event) {
     campos.forEach(function(element, index) {
         Validation(element, spanVazio[index]);
     });
-
     Validation(mesesInput, mesesError);
+
+    var camposInvalidos = document.querySelectorAll('.span-required[style="display: block;"]');
+    if (camposInvalidos.length > 0) return;
+
+    var objetivo = parseFloat(document.querySelector('.valor').value.replace('R$', '').replace('.', '').replace(',', '.'));
+    var meses = parseInt(document.querySelector('.numN').value);
+    var risco = document.querySelector('select').value;
+    var aportes = parseFloat(document.querySelectorAll('.valor')[1].value.replace('R$', '').replace('.', '').replace(',', '.'));
+
+    var sugestao = "";
+
+    if (risco === "1") { // Alto risco
+        if (meses >= 12) {
+            if (objetivo >= 10000) {
+                sugestao = "Considerando o risco alto, o prazo e o valor significativo, uma sugestão de investimento seria em ações ou fundos de investimento diversificados.";
+            } else {
+                sugestao = "Considerando o risco alto, o prazo e o valor mais baixo, uma sugestão de investimento seria em criptomoedas.";
+            }
+        } else {
+            sugestao = "Considerando o risco alto e o prazo curto, é importante avaliar opções de liquidez imediata, como investimentos de curto prazo ou até mesmo manter o dinheiro disponível em uma conta poupança.";
+        }
+    } else { // Baixo risco
+        if (meses >= 24) {
+            if (objetivo >= 5000) {
+                sugestao = "Considerando o risco baixo, o prazo e o valor significativo, uma sugestão de investimento seria em títulos públicos ou fundos de renda fixa.";
+            } else {
+                sugestao = "Considerando o risco baixo, o prazo e o valor mais baixo, uma sugestão de investimento seria em poupança ou tesouro direto.";
+            }
+        } else {
+            sugestao = "Considerando o risco baixo e o prazo curto, é importante priorizar opções de liquidez imediata, como poupança ou tesouro direto.";
+        }
+    }
+
+    document.querySelector('.result').textContent = sugestao;
 });
+

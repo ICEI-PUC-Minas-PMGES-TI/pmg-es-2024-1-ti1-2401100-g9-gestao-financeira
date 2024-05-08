@@ -122,3 +122,8 @@ span{
     margin: 3px;
     color: #f81212;
 }
+
+.result{
+    padding: 15px;
+    font-size: 18px;
+}

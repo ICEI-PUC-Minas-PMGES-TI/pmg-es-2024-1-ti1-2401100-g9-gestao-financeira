@@ -27,16 +27,17 @@
                 </div>
                 <div class="container">
                     <h2>Meses Disponíveis para o Investimento</h2>
-                    <input type='number' class="required numN" id="mesesInput" onblur="Validation(this)">
+                    <input type='number' class="required numN" id="mesesInput" placeholder="Em meses" onblur="Validation(this)">
                     <span class="span-required" id="mesesError">Campo Vazio!</span>
                 </div>
-                
                 <div class="container">
                     <h2>Escolha o Risco de Investimento</h2>
-                    <select>
+                    <select class="required">
+                        <option value="" disabled selected>Selecione o risco</option>
                         <option value="1">Alto</option>
                         <option value="2">Baixo</option>
                     </select>
+                    <span class="span-required">Selecione uma opção!</span>
                 </div>
                 <div class="container">
                     <h2>Valor dos Aportes</h2>
