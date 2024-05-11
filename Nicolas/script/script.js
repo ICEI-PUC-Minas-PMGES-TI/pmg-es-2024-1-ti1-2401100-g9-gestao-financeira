@@ -35,14 +35,23 @@ function Validation(element, errorElement) {
     if (element.value.trim() === '') {
         setError(element, errorElement);
     } else {
-        if (element.classList.contains('numN') && parseInt(element.value) < 0) {
+        if (element.classList.contains('numN') && parseInt(element.value) <= 0) {
             setError(element, errorElement);
-            errorElement.textContent = "Valor não pode ser negativo!";
+            errorElement.textContent = "Valor não pode ser zero ou negativo!";
+        } else if (element.classList.contains('valor')) {
+            var valor = parseFloat(element.value.replace('R$', '').replace('.', '').replace(',', '.'));
+            if (valor <= 0) {
+                setError(element, errorElement);
+                errorElement.textContent = "Valor não pode ser zero ou negativo!";
+            } else {
+                removeError(element, errorElement);
+            }
         } else {
             removeError(element, errorElement);
         }
     }
 }
+
 
 
 document.getElementById('sugerir').addEventListener('click', function(event) {
@@ -73,7 +82,7 @@ document.getElementById('sugerir').addEventListener('click', function(event) {
         } else {
             sugestao = "Considerando o risco alto e o prazo curto, é importante avaliar opções de liquidez imediata, como investimentos de curto prazo ou até mesmo manter o dinheiro disponível em uma conta poupança.";
         }
-    } else { // Baixo risco
+    } else if(risco === "2"){ // Baixo risco
         if (meses >= 24) {
             if (objetivo >= 5000) {
                 sugestao = "Considerando o risco baixo, o prazo e o valor significativo, uma sugestão de investimento seria em títulos públicos ou fundos de renda fixa.";
@@ -82,6 +91,16 @@ document.getElementById('sugerir').addEventListener('click', function(event) {
             }
         } else {
             sugestao = "Considerando o risco baixo e o prazo curto, é importante priorizar opções de liquidez imediata, como poupança ou tesouro direto.";
+        }
+    }else if (risco === "3") { // Médio risco
+        if (meses >= 18) {
+            if (objetivo >= 7500) {
+                sugestao = "Considerando o risco médio, o prazo e o valor significativo, uma sugestão de investimento seria em fundos multimercado com uma diversificação adequada.";
+            } else {
+                sugestao = "Considerando o risco médio, o prazo e o valor mais baixo, uma sugestão de investimento seria em ações de empresas com bom potencial de crescimento.";
+            }
+        } else {
+            sugestao = "Considerando o risco médio e o prazo relativamente curto, é importante buscar opções de investimento que ofereçam um equilíbrio entre risco e retorno. Uma estratégia interessante seria diversificar os investimentos em diferentes classes de ativos, como ações, títulos e fundos imobiliários.";
         }
     }
 

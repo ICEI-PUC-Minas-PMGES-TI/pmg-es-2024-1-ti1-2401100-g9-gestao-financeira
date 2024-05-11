@@ -36,18 +36,21 @@ header h1 {
 }
 
 #notification {
-    position: absolute; 
-    top: 5px; 
+    position: absolute;
+    top: 5px;
     right: 20px;
     border-radius: 100%;
-    background-color:#DFF7E2 ; 
+    background-color: #DFF7E2;
     cursor: pointer;
-    width: 45px; 
-    height: 45px; 
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
+    outline: none;
+    border: none; 
 }
+
 
 #icon1 {
     width: 60%; 
@@ -81,11 +84,10 @@ select {
 button#sugerir {
     background-color: #6FEA7D;
     color: #fff;
-    border: none;
+    border: 2px solid transparent; /* Adiciona uma borda sólida transparente */
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button#sugerir:hover {
@@ -110,7 +112,6 @@ input[type='number'] {
     appearance: textfield;
 }
 
-/* Remove as setinhas do input do tipo number no WebKit (Safari/Chrome) */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -127,3 +128,22 @@ span{
     padding: 15px;
     font-size: 18px;
 }
+
+@media only screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+        position: relative;
+    }
+
+    header h1 {
+        margin-bottom: 20px; /* Adicione um espaço maior entre o título e o botão */
+    }
+
+    #notification {
+        position: absolute;
+        top: 0; /* Posicione o botão no topo */
+        right: 0; /* Posicione o botão no canto direito */
+        margin-top: 10px; /* Adicione um espaço entre o botão e o topo */
+    }
+}
+
