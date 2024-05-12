@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/movimentacoes.css">
+    <title>Movimentacoes</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../js/movimentacoes.js"></script>
+    <a href="../../index.html" id="voltar">←</a>
+    <h1>Movimentações Financeiras</h1>
+    <a href="criar.html" id="cadastro-link">Cadastrar nova Movimentação</a>
+    <div id="listaMovimentacoes"></div> 
+    <!-- body -->
+    <script>
+        function exibeMovimentacao() {
+            let listaMovimentacoes = document.querySelector("#listaMovimentacoes");
+
+            listaMovimentacoes.innerHTML = '';
+
+            readMovimentacao(movimentacoes => {
+                for (let i = 0; i < movimentacoes.length; i++) {
+                    listaMovimentacoes.innerHTML += `<a href="atualizar.html?id=${movimentacoes[i].id}">
+                            <div class="movement-icon ${movimentacoes[i].amount > 0 ? 'income-icon' : 'expense-icon'}">
+                                ${movimentacoes[i].amount > 0 ? '→' : '←'}
+                            </div>
+                            <div>
+                                <div>${movimentacoes[i].name}</div>
+                                <div>${(new Date(movimentacoes[i].date)).toLocaleDateString('pt-BR')}</div>
+                            </div>
+                            <div>
+                                ${(movimentacoes[i].amount > 0 ? '+' : '') + movimentacoes[i].amount.toLocaleString('pt-BR', {"minimumFractionDigits": 2})}
+                            </div>
+                        </a>`;
+                }
+            });
+        }
+
+        exibeMovimentacao();
+    </script>
+</body>
+</html>
