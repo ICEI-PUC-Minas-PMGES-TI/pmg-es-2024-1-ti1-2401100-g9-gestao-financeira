@@ -49,6 +49,7 @@ header h1 {
     align-items: center;
     outline: none;
     border: none; 
+    margin-top: 70px;
 }
 
 
@@ -84,7 +85,7 @@ select {
 button#sugerir {
     background-color: #6FEA7D;
     color: #fff;
-    border: 2px solid transparent; /* Adiciona uma borda sólida transparente */
+    border: 2px solid transparent; 
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -102,13 +103,9 @@ footer {
 }
 
 
-/* Corrige o estilo das setinhas nos inputs do tipo number */
 input[type='number'] {
-    /* Firefox */
     -moz-appearance: textfield;
-    /* WebKit (Safari/Chrome) */
     -webkit-appearance: textfield;
-    /* Internet Explorer/Edge */
     appearance: textfield;
 }
 
@@ -136,22 +133,23 @@ span{
     }
 
     header h1 {
-        margin-bottom: 20px; /* Adicione um espaço maior entre o título e o botão */
+        margin-bottom: 20px;
     }
 
     #notification {
         position: absolute;
-        top: 0; /* Posicione o botão no topo */
-        right: 0; /* Posicione o botão no canto direito */
-        margin-top: 10px; /* Adicione um espaço entre o botão e o topo */
+        top: 0; 
+        right: 0; 
+        margin-top: 10px; 
     }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 body, html {
     height: 100%;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .bold {
@@ -164,14 +162,13 @@ body, html {
 
 #logo-index img {
     width: 4vw;
+    max-width: 100px; 
 }
 
 #header {
     width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -179,18 +176,13 @@ body, html {
 nav {
     display: flex;
     flex-direction: row;
-    width: auto;
     height: fit-content;
     background-color: #DFF7E2;
-    justify-content: center;
-    align-items: center;
     border-radius: 15px;
 }
 
 nav a {
     font-weight: bold;
-    display: block;
-    width: auto;
     padding: 1rem;
     color: #093030;
     transition: all 200ms ease-in-out;
@@ -207,9 +199,33 @@ nav a:visited {
     color: #093030;
 }
 
+#logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; 
+}
+
 #btn_logout {
     background-color: #00D09E;
     color: #093030;
     font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
 }
 
+@media only screen and (max-width: 600px) {
+    #header {
+        flex-direction: column;
+        text-align: center; 
+    }
+
+    nav {
+        margin-top: 10px;
+        border-radius: 0;
+    }
+
+    nav a {
+        padding: 0.5rem; 
+    }
+}

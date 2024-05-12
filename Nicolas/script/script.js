@@ -104,6 +104,7 @@ document.getElementById('sugerir').addEventListener('click', function(event) {
         }
     }
 
+    
     document.querySelector('.result').textContent = sugestao;
 });
 
