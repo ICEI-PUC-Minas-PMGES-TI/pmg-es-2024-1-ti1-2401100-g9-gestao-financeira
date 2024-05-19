@@ -20,6 +20,7 @@ body, html {
 header {
     width: 95%;
     margin-left: auto;
+    margin-top: 0.3rem;
     margin-right: auto;
     display: flex;
     flex-direction: row;
