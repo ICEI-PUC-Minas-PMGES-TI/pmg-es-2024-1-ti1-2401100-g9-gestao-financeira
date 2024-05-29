@@ -9,9 +9,13 @@ button{
     border: none;
     margin-top: 3%;
     color: white !important;
-    padding: 10px !important;
+    padding: 18px !important;
     font-weight: bold !important;
+    font-size: 18px !important;
 
+}
+input{
+    font-size: 23px !important;
 }
 form{
     margin: 5% 10% 10% 10%;

@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
         var isValid = true;
 
         var inputs = this.querySelectorAll('input');
@@ -47,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        if (!isValid) {
-            e.preventDefault();
+        if (isValid) {
+            saveMeta(); // Save the form data only if the form is valid
         }
     });
 
@@ -62,26 +64,25 @@ document.addEventListener("DOMContentLoaded", function() {
         element.style.border = '';
         errorElement.style.display = 'none';
     }
+
+    function saveMeta() {
+        const nomeMeta = document.getElementById('input1').value;
+        const objetivo = document.getElementById('input2').value;
+        const valorInicial = document.getElementById('input3').value;
+
+        const meta = {
+            nomeMeta: nomeMeta,
+            objetivo: objetivo,
+            valorInicial: valorInicial
+        };
+
+        let metas = JSON.parse(localStorage.getItem('metas')) || [];
+
+        metas.push(meta);
+
+        localStorage.setItem('metas', JSON.stringify(metas));
+
+        alert('Meta salva com sucesso!');
+        document.getElementById('form').reset(); // Clear the form after saving
+    }
 });
-document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const nomeMeta = document.getElementById('input1').value;
-    const objetivo = document.getElementById('input2').value;
-    const valorInicial = document.getElementById('input3').value;
-
-    const meta = {
-        nomeMeta: nomeMeta,
-        objetivo: objetivo,
-        valorInicial: valorInicial
-    };
-
-    let metas = JSON.parse(localStorage.getItem('metas')) || [];
-
-    metas.push(meta);
-
-    localStorage.setItem('metas', JSON.stringify(metas));
-
-    alert('Meta salva com sucesso!');
-});
-
