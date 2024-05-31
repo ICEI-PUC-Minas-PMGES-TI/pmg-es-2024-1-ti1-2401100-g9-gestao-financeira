@@ -49,6 +49,15 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+        // Verificar se o valor inicial é maior que o objetivo
+        var valorInicial = parseFloat(document.getElementById('input3').value.replace(/[^\d,]/g, '').replace(',', '.'));
+        var objetivo = parseFloat(document.getElementById('input2').value.replace(/[^\d,]/g, '').replace(',', '.'));
+
+        if (valorInicial > objetivo) {
+            setError(document.getElementById('input3'), document.getElementById('input3').nextElementSibling, "O valor inicial deve ser menor que o objetivo");
+            isValid = false;
+        }
+
         if (isValid) {
             saveMeta(); // Save the form data only if the form is valid
         }
@@ -69,8 +78,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const nomeMeta = document.getElementById('input1').value;
         const objetivo = document.getElementById('input2').value;
         const valorInicial = document.getElementById('input3').value;
+        
+        // Gerando um ID único para a meta
+        const id = Date.now(); // Usando o timestamp como ID
 
         const meta = {
+            id: id,
             nomeMeta: nomeMeta,
             objetivo: objetivo,
             valorInicial: valorInicial
@@ -83,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('metas', JSON.stringify(metas));
 
         alert('Meta salva com sucesso!');
-        document.getElementById('form').reset(); // Clear the form after saving
+        document.getElementById('form').reset(); 
+        window.location.href = "metas.html"; 
     }
 });

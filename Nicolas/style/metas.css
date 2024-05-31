@@ -7,6 +7,39 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.project-box {
+    position: relative;
+}
+
+.delete-goal {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.delete-goal svg {
+    color: #FF0000;
+    width: 60px; 
+    height: 60px;
+    stroke-width: 3;
+}
+
+.project-box-footer {
+    position: relative;
+    padding-bottom: 20px; 
+}
+
+.larger-btn svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 3;
+}
+
+
 a {
     text-decoration: none;
 }
@@ -30,14 +63,14 @@ a {
 .project-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px 30px; /* 20px horizontal gap, 40px vertical gap */
+    gap: 60px 30px; 
     width: 90%;
     max-width: 1200px;
     justify-content: center;
 }
 
 .project-box-wrapper {
-    flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    flex: 1 1 calc(50% - 20px); 
     max-width: calc(50% - 20px);
     padding: 15px;
     box-sizing: border-box;
@@ -87,7 +120,7 @@ a {
 }
 
 .box-progress-header {
-    font-size: 14px;
+    font-size: 16px;
     color: #888;
     margin-bottom: 5px;
 }
@@ -97,7 +130,7 @@ a {
     background-color: #e0e0e0;
     border-radius: 5px;
     overflow: hidden;
-    height: 20px;
+    height: 27px;
     position: relative;
 }
 
@@ -107,18 +140,48 @@ a {
     border-radius: 5px;
     position: relative;
     background-color: #35f44c;
+    transition: width 0.4s ease; 
 }
-
 .box-progress-percentage {
-    font-size: 14px;
+    font-size: 15px; 
     color: white;
     position: absolute;
     top: 50%;
-    right: 0;
-    transform: translate(10%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%); 
     white-space: nowrap;
-    padding-right: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content; 
 }
+
+.box-progress-percentage::after {
+    content: attr(data-percentage) "%";
+}
+
+.box-progress-percentage[data-percentage="100"]::after {
+    content: "100%";
+}
+
+.box-progress-percentage[data-percentage="0"]::after {
+    content: "0%";
+}
+
+.box-progress-percentage::after {
+    content: attr(data-percentage) "%";
+}
+
+.box-progress-percentage::before {
+    content: attr(data-percentage) "%";
+    visibility: hidden;
+}
+
+.box-progress-percentage[data-percentage="100"]::after,
+.box-progress-percentage[data-percentage="0"]::after {
+    visibility: visible;
+}
+
 
 .progress-values {
     display: flex;

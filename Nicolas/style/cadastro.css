@@ -4,14 +4,18 @@ body {
     color: #DFF7E2;
      
 }
+#seta{
+    margin-bottom: 30px;
+}
+
 button{
     background-color: #6FEA7D !important;
     border: none;
     margin-top: 3%;
     color: white !important;
-    padding: 18px !important;
+    padding: 16px !important;
     font-weight: bold !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
 
 }
 input{
