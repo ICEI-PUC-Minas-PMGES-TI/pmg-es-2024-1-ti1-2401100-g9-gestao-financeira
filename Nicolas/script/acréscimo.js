@@ -65,23 +65,44 @@ document.addEventListener("DOMContentLoaded", function() {
         errorElement.style.display = 'none';
     }
 
-    function updateMeta() {
-        var metaSelecionada = document.querySelector('.meta-selecionada');
-        
-        if (metaSelecionada) {
-            var novoValorInicial = parseFloat(document.getElementById('input2').value.replace(/[^\d,]/g, '').replace(',', '.'));
-            
-            var metas = JSON.parse(localStorage.getItem('metas')) || [];
-            var metaIndex = parseInt(metaSelecionada.getAttribute('data-meta-index'));
-            metas[metaIndex].valorInicial = novoValorInicial.toFixed(2);
-            localStorage.setItem('metas', JSON.stringify(metas));
+    async function updateMeta() {
+        const metaId = new URLSearchParams(window.location.search).get('id'); 
+        const valorAcrescentar = parseFloat(document.getElementById('input2').value.replace('R$', '').replace('.', '').replace(',', '.'));
     
-            window.location.href = "metas.html";
-        } else {
-            console.error('Nenhuma meta selecionada.');
+        if (isNaN(valorAcrescentar)) {
+            alert('Por favor, insira um valor válido.');
+            return;
+        }
+    
+        try {
+            const response = await fetch(`/localhost/metas/${id}`);
+            const meta = await response.json();
+    
+            if (meta) {
+                // Atualizando o valor inicial da meta
+                meta.valorInicial += valorAcrescentar;
+    
+                // Salvando de volta no servidor
+                const updateResponse = await fetch(`/localhost/metas/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(meta)
+                });
+    
+                if (updateResponse.ok) {
+                    alert('Valor atualizado com sucesso!');
+                    window.location.href = './metas.html'; 
+                } else {
+                    alert('Ocorreu um erro ao atualizar a meta no servidor.');
+                }
+            } else {
+                alert('Meta não encontrada.');
+            }
+        } catch (error) {
+            console.error('Erro ao atualizar a meta:', error);
+            alert('Ocorreu um erro ao atualizar a meta. Por favor, tente novamente mais tarde.');
         }
     }
-    
-    
-    
 });
