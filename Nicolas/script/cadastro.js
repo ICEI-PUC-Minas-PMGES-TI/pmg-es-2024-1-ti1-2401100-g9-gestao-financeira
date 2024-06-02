@@ -79,8 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const objetivo = document.getElementById('input2').value;
         const valorInicial = document.getElementById('input3').value;
         
-        // Gerando um ID único para a meta
-        const id = Date.now(); // Usando o timestamp como ID
+        const id = Date.now(); 
 
         const meta = {
             id: id,
