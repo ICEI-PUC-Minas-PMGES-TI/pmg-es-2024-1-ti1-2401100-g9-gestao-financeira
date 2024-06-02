@@ -58,7 +58,6 @@
         idInput.value = movimentacaoId;
 
         let movimentacao = getMovimentacao(movimentacaoId, movimentacaoObject => {
-            console.log(movimentacaoObject);
             dateInput.value = movimentacaoObject.date.substring(0, movimentacaoObject.date.length -3);
             movementTypeInput.selected = movimentacaoObject.amount > 0 ? 'income' : 'expense';
             amountInput.value = movimentacaoObject.amount > 0 ? movimentacaoObject.amount.toLocaleString('pt-BR', {"minimumFractionDigits": 2}) :  (movimentacaoObject.amount * -1).toLocaleString('pt-BR', {"minimumFractionDigits": 2}) ;
