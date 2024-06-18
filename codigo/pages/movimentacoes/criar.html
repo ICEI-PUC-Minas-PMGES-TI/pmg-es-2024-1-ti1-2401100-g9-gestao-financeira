@@ -35,6 +35,23 @@
             Título
             <input type="text" name="name" id="name">
         </label>
+        <div class="switch-label">
+            Definir recorrência
+            <input type="checkbox" id="recorrencia-switch" name/><label for="recorrencia-switch">Toggle</label>
+        </div>
+        <label for="recurrence-type" class="invisible">
+            Tipo de recorrência
+            <select name="recurrence-type" id="recurrence-type">
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="weekly">Semanal</option>
+                <option value="biweekly">Quinzenal</option>
+                <option value="monthly">Mensal</option>
+            </select>
+        </label>
+        <label for="recurrence-end-date" class="invisible">
+            Data final da recorrência
+            <input type="datetime-local" name="recurrence-end-date" id="recurrence-end-date">
+        </label>
         <label>
             Descrição
             <input type="text" name="description" id="description">
@@ -42,11 +59,24 @@
         <button id="criarMovimentacao">Criar</button>
     </form>
     <script>
-        let formCadastro = document.querySelector("#form-cadastro");
+        let recorrenciaSwitchEl = document.querySelector('#recorrencia-switch');
+        let recurrenceType = document.querySelector('#recurrence-type');
+        let recurrenceEndDate = document.querySelector('#recurrence-end-date');
+        let recurrenceTypeLabel = document.querySelector('label[for="recurrence-type"]');
+        let recurrenceEndDateLabel = document.querySelector('label[for="recurrence-end-date"]');
+        let formCadastro = document.querySelector('#form-cadastro');
+
+        recorrenciaSwitchEl.addEventListener('change', (e) => {
+            recurrenceTypeLabel.classList.toggle('invisible');
+            recurrenceEndDateLabel.classList.toggle('invisible');
+            recurrenceType.value = '';
+            recurrenceEndDate.value = '';
+        })
+
         formCadastro.addEventListener('submit', (e) => {
             e.preventDefault();
         })
-        let criarMovimentacao = document.querySelector("#criarMovimentacao");
+        let criarMovimentacao = document.querySelector('#criarMovimentacao');
         criarMovimentacao.addEventListener('click', cadastrarMovimentacao);
     </script>
 </body>
