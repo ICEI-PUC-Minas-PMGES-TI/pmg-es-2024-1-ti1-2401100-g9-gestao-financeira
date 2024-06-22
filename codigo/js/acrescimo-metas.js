@@ -17,13 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
             e.target.value = 'R$' + valor; 
         });
+        carregarMetas();
     });
 
-    carregarMetas();
-
+    // Adicionando evento de envio do formulário
     document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
         
+        // Preencher o input oculto com o ID da meta
+        var metaId = localStorage.getItem('id');
+        document.getElementById('metaIdInput').value = metaId;
+
         var isValid = true;
 
         var inputs = this.querySelectorAll('input');
@@ -51,11 +55,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Verificar se o valor inicial é maior que o objetivo
-        
-
         if (isValid) {
-            updateMeta(); // Save the form data only if the form is valid
+            updateMeta();
         }
     });
 
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         element.style.border = '';
         errorElement.style.display = 'none';
     }
+
     function carregarMetas() {
         try {
             // Verifica se há metas no localStorage
@@ -84,12 +86,10 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error('Erro ao carregar as metas do localStorage:', error);
         }
     }
-
+    
     function updateMeta() {
-        const nomeMeta = document.getElementById('input1').value;
-        const objetivo = document.getElementById('input2').value;
         const valorInput = document.getElementById('input2').value;
-        
+    
         try {
             // Obter metas do localStorage
             let metas = JSON.parse(localStorage.getItem('metas')) || [];
@@ -98,33 +98,28 @@ document.addEventListener("DOMContentLoaded", function() {
             if (metas.length === 0) {
                 throw new Error('Nenhuma meta encontrada');
             }
-    
+
             // Obter o valor inicial da primeira meta
             const valorInicial = parseFloat(metas[0].valorInicial.replace('R$', '').replace('.', '').replace(',', '.'));
-    
+
             // Obter o valor digitado no input2
             const valorInputFloat = parseFloat(valorInput.replace('R$', '').replace('.', '').replace(',', '.'));
-    
-            // Verificar se o valor digitado é menor que o valor inicial
-            if (valorInputFloat < valorInicial) {
-                throw new Error('O valor inserido é menor que o valor atual');
-            }
-    
-            // Atualizar nome da meta e objetivo
-            metas[0].nomeMeta = nomeMeta;
-            metas[0].objetivo = objetivo;
-    
+
+            // Somar os valores
+            const novoValor = valorInicial + valorInputFloat;
+
+            // Atualizar o valor inicial da meta
+            metas[0].valorInicial = 'R$' + novoValor.toFixed(2).replace('.', ',');
+
             // Atualizar metas no localStorage
             localStorage.setItem('metas', JSON.stringify(metas));
     
-            alert('Meta atualizada com sucesso!');
-            window.location.href = "metas.html"; 
+            alert('Valor atualizado com sucesso!');
+            window.location.href = "../metas-financeiras/metas-financeiras.html"; 
         } catch (error) {
             console.error('Erro:', error);
-            alert(error.message);
+            alert('Ocorreu um erro ao atualizar o valor');
         }
     }
     
-    
-   
 });

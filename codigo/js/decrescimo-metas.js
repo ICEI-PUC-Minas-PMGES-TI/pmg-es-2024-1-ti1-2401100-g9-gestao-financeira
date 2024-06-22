@@ -17,17 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
             e.target.value = 'R$' + valor; 
         });
-        carregarMetas();
     });
 
-    // Adicionando evento de envio do formulário
+    carregarMetas();
+
     document.getElementById('form').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Preencher o input oculto com o ID da meta
-        var metaId = localStorage.getItem('id');
-        document.getElementById('metaIdInput').value = metaId;
-
         var isValid = true;
 
         var inputs = this.querySelectorAll('input');
@@ -106,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const valorInputFloat = parseFloat(valorInput.replace('R$', '').replace('.', '').replace(',', '.'));
 
             // Somar os valores
-            const novoValor = valorInicial + valorInputFloat;
+            const novoValor = valorInicial - valorInputFloat;
 
             // Atualizar o valor inicial da meta
             metas[0].valorInicial = 'R$' + novoValor.toFixed(2).replace('.', ',');
@@ -115,11 +111,10 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem('metas', JSON.stringify(metas));
     
             alert('Valor atualizado com sucesso!');
-            window.location.href = "metas.html"; 
+            window.location.href = "../metas-financeiras/metas-financeiras.html"; 
         } catch (error) {
             console.error('Erro:', error);
             alert('Ocorreu um erro ao atualizar o valor');
         }
     }
-    
 });

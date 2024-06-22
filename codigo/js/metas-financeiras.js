@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <input type="hidden" id="metaId" value="">
                         <p class="box-content-header">${meta.nomeMeta}</p>
                         <div class="more-wrapper">
-                        <a href= "./edit.html">
+                        <a href= "../metas-financeiras/edit-metas.html">
                             <button class="edit-participant" style="color: #15e82d;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
                                     <path d="M12 20h9"></path>
@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="project-box-footer">
                         <div class="participants">
-                        <a href= "./acréscimo.html">
+                        <a href= "../metas-financeiras/acrescimo-metas.html">
                             <button class="add-participant larger-btn" style="color: #1cff03;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                                     <path d="M12 5v14M5 12h14"></path>
                                 </svg>
                             </button>
                         </a>
-                        <a href= "./decréscimo.html">
+                        <a href= "../metas-financeiras/decrescimo-metas.html">
                             <button class="remove-participant larger-btn" style="color: #FF6F6F;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-minus">
                                     <path d="M5 12h14"></path>

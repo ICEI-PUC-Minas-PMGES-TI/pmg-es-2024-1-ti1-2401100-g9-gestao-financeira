@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    carregarMetas();
+
     document.getElementById('form').addEventListener('submit', function(e) {
         e.preventDefault(); // Prevent default form submission
         
@@ -50,16 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Verificar se o valor inicial é maior que o objetivo
-        var valorInicial = parseFloat(document.getElementById('input3').value.replace(/[^\d,]/g, '').replace(',', '.'));
-        var objetivo = parseFloat(document.getElementById('input2').value.replace(/[^\d,]/g, '').replace(',', '.'));
-
-        if (valorInicial > objetivo) {
-            setError(document.getElementById('input3'), document.getElementById('input3').nextElementSibling, "O valor inicial deve ser menor que o objetivo");
-            isValid = false;
-        }
+        
 
         if (isValid) {
-            saveMeta(); // Save the form data only if the form is valid
+            updateMeta(); // Save the form data only if the form is valid
         }
     });
 
@@ -73,29 +69,62 @@ document.addEventListener("DOMContentLoaded", function() {
         element.style.border = '';
         errorElement.style.display = 'none';
     }
+    function carregarMetas() {
+        try {
+            // Verifica se há metas no localStorage
+            const metas = JSON.parse(localStorage.getItem('metas'));
+    
+            if (metas) {
+                console.log('Metas carregadas do localStorage:');
+                console.log(metas);
+            } else {
+                console.log('Nenhuma meta encontrada no localStorage.');
+            }
+        } catch (error) {
+            console.error('Erro ao carregar as metas do localStorage:', error);
+        }
+    }
 
-    function saveMeta() {
+    function updateMeta() {
         const nomeMeta = document.getElementById('input1').value;
         const objetivo = document.getElementById('input2').value;
-        const valorInicial = document.getElementById('input3').value;
+        const valorInput = document.getElementById('input2').value;
         
-        const id = Date.now(); 
-
-        const meta = {
-            id: id,
-            nomeMeta: nomeMeta,
-            objetivo: objetivo,
-            valorInicial: valorInicial
-        };
-
-        let metas = JSON.parse(localStorage.getItem('metas')) || [];
-
-        metas.push(meta);
-
-        localStorage.setItem('metas', JSON.stringify(metas));
-
-        alert('Meta salva com sucesso!');
-        document.getElementById('form').reset(); 
-        window.location.href = "metas.html"; 
+        try {
+            // Obter metas do localStorage
+            let metas = JSON.parse(localStorage.getItem('metas')) || [];
+    
+            // Verificar se há pelo menos uma meta
+            if (metas.length === 0) {
+                throw new Error('Nenhuma meta encontrada');
+            }
+    
+            // Obter o valor inicial da primeira meta
+            const valorInicial = parseFloat(metas[0].valorInicial.replace('R$', '').replace('.', '').replace(',', '.'));
+    
+            // Obter o valor digitado no input2
+            const valorInputFloat = parseFloat(valorInput.replace('R$', '').replace('.', '').replace(',', '.'));
+    
+            // Verificar se o valor digitado é menor que o valor inicial
+            if (valorInputFloat < valorInicial) {
+                throw new Error('O valor inserido é menor que o valor atual');
+            }
+    
+            // Atualizar nome da meta e objetivo
+            metas[0].nomeMeta = nomeMeta;
+            metas[0].objetivo = objetivo;
+    
+            // Atualizar metas no localStorage
+            localStorage.setItem('metas', JSON.stringify(metas));
+    
+            alert('Meta atualizada com sucesso!');
+            window.location.href = "../metas-financeiras/metas-financeiras.html"; 
+        } catch (error) {
+            console.error('Erro:', error);
+            alert(error.message);
+        }
     }
+    
+    
+   
 });

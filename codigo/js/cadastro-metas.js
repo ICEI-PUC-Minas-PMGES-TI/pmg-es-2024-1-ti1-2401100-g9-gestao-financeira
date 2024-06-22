@@ -19,10 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    carregarMetas();
-
     document.getElementById('form').addEventListener('submit', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent default form submission
         
         var isValid = true;
 
@@ -51,8 +49,17 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+        // Verificar se o valor inicial é maior que o objetivo
+        var valorInicial = parseFloat(document.getElementById('input3').value.replace(/[^\d,]/g, '').replace(',', '.'));
+        var objetivo = parseFloat(document.getElementById('input2').value.replace(/[^\d,]/g, '').replace(',', '.'));
+
+        if (valorInicial > objetivo) {
+            setError(document.getElementById('input3'), document.getElementById('input3').nextElementSibling, "O valor inicial deve ser menor que o objetivo");
+            isValid = false;
+        }
+
         if (isValid) {
-            updateMeta();
+            saveMeta(); // Save the form data only if the form is valid
         }
     });
 
@@ -67,54 +74,28 @@ document.addEventListener("DOMContentLoaded", function() {
         errorElement.style.display = 'none';
     }
 
-    function carregarMetas() {
-        try {
-            // Verifica se há metas no localStorage
-            const metas = JSON.parse(localStorage.getItem('metas'));
-    
-            if (metas) {
-                console.log('Metas carregadas do localStorage:');
-                console.log(metas);
-            } else {
-                console.log('Nenhuma meta encontrada no localStorage.');
-            }
-        } catch (error) {
-            console.error('Erro ao carregar as metas do localStorage:', error);
-        }
-    }
-    
-    function updateMeta() {
-        const valorInput = document.getElementById('input2').value;
-    
-        try {
-            // Obter metas do localStorage
-            let metas = JSON.parse(localStorage.getItem('metas')) || [];
-    
-            // Verificar se há pelo menos uma meta
-            if (metas.length === 0) {
-                throw new Error('Nenhuma meta encontrada');
-            }
+    function saveMeta() {
+        const nomeMeta = document.getElementById('input1').value;
+        const objetivo = document.getElementById('input2').value;
+        const valorInicial = document.getElementById('input3').value;
+        
+        const id = Date.now(); 
 
-            // Obter o valor inicial da primeira meta
-            const valorInicial = parseFloat(metas[0].valorInicial.replace('R$', '').replace('.', '').replace(',', '.'));
+        const meta = {
+            id: id,
+            nomeMeta: nomeMeta,
+            objetivo: objetivo,
+            valorInicial: valorInicial
+        };
 
-            // Obter o valor digitado no input2
-            const valorInputFloat = parseFloat(valorInput.replace('R$', '').replace('.', '').replace(',', '.'));
+        let metas = JSON.parse(localStorage.getItem('metas')) || [];
 
-            // Somar os valores
-            const novoValor = valorInicial - valorInputFloat;
+        metas.push(meta);
 
-            // Atualizar o valor inicial da meta
-            metas[0].valorInicial = 'R$' + novoValor.toFixed(2).replace('.', ',');
+        localStorage.setItem('metas', JSON.stringify(metas));
 
-            // Atualizar metas no localStorage
-            localStorage.setItem('metas', JSON.stringify(metas));
-    
-            alert('Valor atualizado com sucesso!');
-            window.location.href = "metas.html"; 
-        } catch (error) {
-            console.error('Erro:', error);
-            alert('Ocorreu um erro ao atualizar o valor');
-        }
+        alert('Meta salva com sucesso!');
+        document.getElementById('form').reset(); 
+        window.location.href = "../metas-financeiras/metas-financeiras.html"; 
     }
 });
