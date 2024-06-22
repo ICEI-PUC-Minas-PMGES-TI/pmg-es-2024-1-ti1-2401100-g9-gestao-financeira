@@ -1,0 +1,228 @@
+body {
+    background-color: #0E3E3E;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.project-box {
+    position: relative;
+}
+
+.delete-goal {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.delete-goal svg {
+    color: #FF0000;
+    width: 60px; 
+    height: 60px;
+    stroke-width: 3;
+}
+
+.project-box-footer {
+    position: relative;
+    padding-bottom: 20px; 
+}
+
+.larger-btn svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 3;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#btn-cadastro {
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: #6FEA7D;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px 30px; 
+    width: 90%;
+    max-width: 1200px;
+    justify-content: center;
+}
+
+.project-box-wrapper {
+    flex: 1 1 calc(50% - 20px); 
+    max-width: calc(50% - 20px);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.project-box {
+    background-color: #DFF7E2;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.project-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.project-box-header span {
+    font-size: 14px;
+    color: #888;
+}
+
+.project-box-content-header {
+    margin-bottom: 20px;
+}
+
+.box-content-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.box-content-subheader {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.box-progress-wrapper {
+    margin-bottom: 20px;
+}
+
+.box-progress-header {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.box-progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 27px;
+    position: relative;
+}
+
+.box-progress {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    background-color: #35f44c;
+    transition: width 0.4s ease; 
+}
+.box-progress-percentage {
+    font-size: 15px; 
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: fit-content; 
+}
+
+.box-progress-percentage::after {
+    content: attr(data-percentage) "%";
+}
+
+.box-progress-percentage[data-percentage="100"]::after {
+    content: "100%";
+}
+
+.box-progress-percentage[data-percentage="0"]::after {
+    content: "0%";
+}
+
+.box-progress-percentage::after {
+    content: attr(data-percentage) "%";
+}
+
+.box-progress-percentage::before {
+    content: attr(data-percentage) "%";
+    visibility: hidden;
+}
+
+.box-progress-percentage[data-percentage="100"]::after,
+.box-progress-percentage[data-percentage="0"]::after {
+    visibility: visible;
+}
+
+
+.progress-values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px; 
+    color: #888;
+    margin-top: 5px;
+}
+
+.project-box-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.participants {
+    display: flex;
+    align-items: center;
+}
+
+.edit-participant, .add-participant, .remove-participant {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.feather {
+    stroke: currentColor;
+}
+
+.larger-btn .feather {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .project-box-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
