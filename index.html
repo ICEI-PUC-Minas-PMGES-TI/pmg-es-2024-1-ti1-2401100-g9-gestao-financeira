@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <button class="back-btn" id="back-btn">
+        &#8592; 
+    </button>
+    
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="expenses">
+                    <p>Despesas</p>
+                    <p id="expenses-amount">$0.00</p>
+                </div>
+                <div class="balance">
+                    <p>Saldo</p>
+                    <p id="balance-amount">$0.00</p>
+                </div>
+                <div class="incomes">
+                    <p>Receitas</p>
+                    <p id="incomes-amount">$0.00</p>
+                </div>
+            </div>
+        </div>
+        <div class="transactions" id="transactions-container">
+       
+        </div>
+        <button class="btn" id="add-transaction-btn">Cadastrar Movimentação</button>
+    </div>
+
+    <div class="modal" id="transaction-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal-btn">&times;</span>
+            <h2>Cadastrar Movimentação</h2>
+            <form id="transaction-form">
+                <label for="transaction-type">Tipo de Movimentação:</label>
+                <select id="transaction-type" required>
+                    <option value="income">Entrada</option>
+                    <option value="expense">Saída</option>
+                </select>
+                <label for="transaction-amount">Quantidade:</label>
+                <input type="number" id="transaction-amount" step="0.01" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
