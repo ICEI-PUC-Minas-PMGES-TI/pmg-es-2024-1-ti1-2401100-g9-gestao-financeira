@@ -142,7 +142,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-008| Definir Entradas e saídas recorrentes | MÉDIA | 
 |RF-009| Informes financeiros mensais | MÉDIA | 
 |RF-010| Categorizar despesas | MÉDIA | 
-|RF-011| Resumos financeiros mensais | MÉDIA | 
+|RF-011| Controle de Metas Financeiras | MÉDIA | 
 |RF-012| Visualizar Gráficos Ilustrativos | ALTA | 
 
 
