@@ -1,0 +1,135 @@
+body{
+    background-color: #093030;
+}
+.container-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    font-size: 18px;
+    font-family: "Poppins-Medium", Helvetica;
+} 
+#icon-notifi{
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+.input-dados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+button, input{
+    overflow: hidden;
+    border-radius: 10px;
+    font-family: "Poppins-Medium", Helvetica;
+    width: 500px;
+    height: 44px;
+}
+select{
+    overflow: hidden;
+    border-radius: 10px;
+    font-family: "Poppins-Medium", Helvetica;
+    width: 510px;
+    height: 52px;
+}
+button{
+    margin-top: -140px;
+    width: 500px;
+    height: 100px;
+    background-color: #6FEA7D;
+    font-size: 52px;
+    font-family: "Poppins-Medium", Helvetica;
+    font-weight: 600;
+    color: white;
+}
+h4{
+    font-size: 20px;
+    font-family: "Poppins-Medium", Helvetica;
+    color: white;
+    position: relative;
+    right: 110px;
+    bottom: -20px;
+}   
+h1{
+    font-size: 60px;
+    font-family: "Poppins-Medium", Helvetica;
+    color: white;
+    position: relative;
+    right: 90px;
+}
+h3{
+    font-size: 70px;
+    font-family: "Poppins-Medium", Helvetica;
+    color: white;
+    position: relative;
+    right: 102px;
+    bottom: 120px;
+}
+#ajustar1{
+    position: relative;
+    right: 175px;
+}
+#ajustar2{
+    position: relative;
+    right: 117px;
+}
+#ajustar3{
+    position: relative;
+    right: 100px;
+}
+h2{
+    font-size: 30px;
+    font-family: "Poppins-Medium", Helvetica;
+    color: white;
+    position: relative;
+    right: 20px;
+    bottom: 0px;
+}  
+input{
+    color: black;
+    font-size: 20px;
+    font-weight: 1200;
+    font-family: "Poppins-SemiBold", Helvetica;
+}
+#option-dados{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: "Poppins-Medium", Helvetica;
+}
+#mostrar-grafico{
+    position: relative;
+    top: 50px;
+}
+@media only screen and (max-width: 600px) {
+    button, input {
+        width: 90%;
+    }
+    select {
+        width: 90%; /* Ajuste o tamanho do select para que ele fique igual aos outros inputs */
+        margin-bottom: 10px; /* Adicione um espaço entre os elementos para uma melhor aparência */
+    }
+    h4, h1, h2, h3 {
+        text-align: center;
+        right: 0;
+    }
+    .input-dados {
+        margin-top: 50px;
+    }
+    #ajustar1, #ajustar2, #ajustar3 {
+        right: 0;
+        text-align: center;
+    }
+    .container-header {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
