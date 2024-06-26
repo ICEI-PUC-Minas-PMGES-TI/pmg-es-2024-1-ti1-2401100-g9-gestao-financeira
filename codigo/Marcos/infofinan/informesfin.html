@@ -6,6 +6,7 @@
     <title>Cadastro de Movimentações</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/style/inform.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -22,8 +23,8 @@
                         </div>
                         <div class="form-group">
                             <label for="valor">Valor</label>
-                            <input type="number" class="form-control" id="valor" placeholder="Digite o valor da movimentação">
-                        </div>
+                            <input type="number" format="currency" precision="2" id="valor" name="valor" class="form-control" formControlName="valor" />
+                          </div>
                         <div class="form-group">
                             <label for="categoria">Selecione a Categoria</label>
                             <select class="form-control" id="categoria">
