@@ -1,0 +1,38 @@
+body {
+  background-color: #bdffd8;
+  color: #fff;
+}
+
+.card {
+  background-color: #333;
+  border: none;
+}
+
+.card-header {
+  background-color: #00c853;
+}
+
+.card-body {
+  background-color: #555;
+}
+
+.card-footer {
+  background-color: #666;
+}
+
+.btn-primary {
+  background-color: #00c853;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #00b04a;
+}
+
+.btn-link {
+  color: #fff;
+}
+
+.btn-link:hover {
+  color: #00c853;
+}
