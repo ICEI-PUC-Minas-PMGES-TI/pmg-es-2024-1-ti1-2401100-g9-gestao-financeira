@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/plentz/jquery-maskmoney@master/dist/jquery.maskMoney.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/movimentacoes.css">
+</head>
+<body>
+    <script src="../../js/movimentacoes.js"></script>
+    <a href="listagem.html" id="voltar">←</a>
+    <h1>Cadastrar Movimentação</h1>
+    <form id="form-cadastro" class="form-cadastro-atualizacao" onsubmit="event.preventDefault">
+        <label>
+            Data
+            <input type="datetime-local" name="date" id="date">
+        </label>
+        <label>
+            Despesa ou Receita
+            <select name="movementType" id="movementType">
+                <option value="expense">Despesa</option>
+                <option value="income">Receita</option>
+            </select>
+        </label>
+        <label>
+            Valor
+            <input type="text" name="amount" id="amount" data-thousands="." data-decimal="," data-prefix="R$" >
+        </label>
+        <label>
+            Título
+            <input type="text" name="name" id="name">
+        </label>
+        <div class="switch-label">
+            Definir recorrência
+            <input type="checkbox" id="recorrencia-switch" name/><label for="recorrencia-switch">Toggle</label>
+        </div>
+        <label for="recurrence-type" class="invisible">
+            Tipo de recorrência
+            <select name="recurrence-type" id="recurrence-type">
+                <option value="" disabled selected>Escolha uma opção</option>
+                <option value="weekly">Semanal</option>
+                <option value="biweekly">Quinzenal</option>
+                <option value="monthly">Mensal</option>
+            </select>
+        </label>
+        <label for="recurrence-end-date" class="invisible">
+            Data final da recorrência
+            <input type="datetime-local" name="recurrence-end-date" id="recurrence-end-date">
+        </label>
+        <label>
+            Descrição
+            <input type="text" name="description" id="description">
+        </label>
+        <button id="criarMovimentacao">Criar</button>
+    </form>
+    <script>
+        let recorrenciaSwitchEl = document.querySelector('#recorrencia-switch');
+        let recurrenceType = document.querySelector('#recurrence-type');
+        let recurrenceEndDate = document.querySelector('#recurrence-end-date');
+        let recurrenceTypeLabel = document.querySelector('label[for="recurrence-type"]');
+        let recurrenceEndDateLabel = document.querySelector('label[for="recurrence-end-date"]');
+        let formCadastro = document.querySelector('#form-cadastro');
+
+        recorrenciaSwitchEl.addEventListener('change', (e) => {
+            recurrenceTypeLabel.classList.toggle('invisible');
+            recurrenceEndDateLabel.classList.toggle('invisible');
+            recurrenceType.value = '';
+            recurrenceEndDate.value = '';
+        })
+
+        formCadastro.addEventListener('submit', (e) => {
+            e.preventDefault();
+        })
+        let criarMovimentacao = document.querySelector('#criarMovimentacao');
+        criarMovimentacao.addEventListener('click', cadastrarMovimentacao);
+    </script>
+</body>
+</html>

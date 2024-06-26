@@ -20,6 +20,7 @@ body, html {
 header {
     width: 95%;
     margin-left: auto;
+    margin-top: 0.3rem;
     margin-right: auto;
     display: flex;
     flex-direction: row;
@@ -62,4 +63,8 @@ nav a:visited {
     background-color: #00D09E;
     color: #093030;
     font-weight: bold;
+}
+
+.invisible {
+    display: none;
 }

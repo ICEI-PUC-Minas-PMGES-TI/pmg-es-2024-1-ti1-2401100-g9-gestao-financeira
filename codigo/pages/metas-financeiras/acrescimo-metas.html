@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acréscimo do valor Inicial</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/acrescimo-metas.css">
+</head>
+<body>
+    <input type="hidden" id="metaIdInput">
+    <div id="header">
+        <a href="codigo/index.html" id="logo-index">
+            <img id="finny" src="/codigo/assets/Finny - simbolo.svg">
+        </a>
+        <nav>
+            <a href="" style="border-radius: 15px 0 0 15px;">Despesas</a>
+            <a href="">Educação</a>
+            <a href="">Investimentos</a>
+            <a href="" style="border-radius: 0 15px 15px 0;">Perfil</a>
+        </nav>
+        <div id="logout-container">
+            <button class="btn" id="btn_logout">Efetuar Logout</button>
+        </div>
+    </div>
+    <form id="form">
+        <a href="../metas-financeiras/metas-financeiras.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="seta">
+            <path d="M19 12H6m7-7l-7 7 7 7" />
+          </svg></a>
+        <h1 class="mt-1">Acréscimo Monetario</h1>
+        <div>
+            <input type="text" class="form-control valor" id="input2" placeholder="R$1000,00">
+            <span class="span-required" style="display:none; color:red;">Campo Vazio!</span>
+        </div>
+        <button type="submit" class="btn">Atualizar</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="../../js/acrescimo-metas.js"></script>
+</body>
+</html>
