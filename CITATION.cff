@@ -1,31 +1,39 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Aplicativo de gestão de finanças
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Aguiar França
+    given-names: Marcos Henrique 
+  - family-names: Gomes de Carvalho
+    given-names: Henrique Moreira
+  - family-names: Gazire Xavier
+    given-names: Matheus Ruas
+  - family-names: Crisóstomo
+    given-names: Sol Quaresma 
+  - family-names: Fonseca Pimenta
+    given-names: Nicolas Araújo
+  - family-names: Ramos Souza
+    given-names: Gabriel Azeredo
+ - name-suffix: Professor
+    affiliation: PUC Minas
+  - family-names: Nogueira
+    given-names: Simone Alves
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names:  Osório Pereira
+    given-names: Daniel Machado 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: de Faria Barros
+    given-names:  Diego Augusto
+ - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Seufitelli
+    given-names: Danilo Boechat 
 keywords:
-  - 
-  - 
-repository-code: 
+  - Finanças
+  - Organização
+repository-code: https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2024-1-ti1-2401100-g9-gestao-financeira
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2024-06-30
