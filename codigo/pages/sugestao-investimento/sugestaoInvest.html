@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestão de Investimento</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style-sugestao.css">
+    <script defer src="../../js/script-sugestao.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <a href="codigo/index.html" id="logo-index">
+            <img id="finny" src="../../assets/Finny - simbolo.svg">
+        </a>
+        <nav>
+            <a href="" style="border-radius: 15px 0 0 15px;">Despesas</a>
+            <a href="">Educação</a>
+            <a href="">Investimentos</a>
+            <a href="" style="border-radius: 0 15px 15px 0;">Perfil</a>
+        </nav>
+        <div id="logout-container">
+            <button class="btn" id="btn_logout">Efetuar Logout</button>
+        </div>
+    </div>
+    
+    <main>
+        <section>
+            <div id="form">
+                <div class="container">
+                    <h2>Objetivo Financeiro</h2>
+                    <input type="text" class="valor required" placeholder="R$00,00" onblur="Validation(this)">
+                    <span class="span-required">Campo Vazio!</span>
+                </div>
+                <div class="container">
+                    <h2>Meses Disponíveis para o Investimento</h2>
+                    <input type='number' class="required numN" id="mesesInput" placeholder="Em meses" onblur="Validation(this)">
+                    <span class="span-required" id="mesesError">Campo Vazio!</span>
+                </div>
+                <div class="container">
+                    <h2>Escolha o Risco de Investimento</h2>
+                    <select class="required">
+                        <option value="" disabled selected>Selecione o risco</option>
+                        <option value="1">Alto</option>
+                        <option value="3">Médio</option>
+                        <option value="2">Baixo</option>
+                    </select>
+                    <span class="span-required">Selecione uma opção!</span>
+                </div>
+                <div class="container">
+                    <h2>Valor dos Aportes</h2>
+                    <input type="text" class="valor required" placeholder="R$00,00" onblur="Validation(this)">
+                    <span class="span-required">Campo Vazio!</span>
+                </div>
+            </div>
+            <div class="container">
+                <h2 class="result-title">Sugestão:</h2>
+                <p class="result"></p>
+                <button id="sugerir">Sugerir</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sugestão de Investimento </p>
+        </div>
+    </footer>
+</body>
+
+</html>
