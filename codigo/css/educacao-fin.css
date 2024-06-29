@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #063a41;
+    font-family: 'Inter', sans-serif;
+    color: aliceblue;
+}
+h1 {
+    text-align: center;
+}
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    margin-top: 2%;
+}
+iframe {
+    width: 60%; 
+    height:60vh;
+}
+p{
+    margin-top: 2%;
+    text-align: justify;
+    padding: 2%;
+}
+span {
+    font-size: 2rem;
+    
+  }
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #063a41;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+.back-button:hover {
+    background-color: #04565a;
+}
+
