@@ -50,14 +50,14 @@ function initLoginApp () {
     if (usuarioCorrenteJSON) {
         usuarioCorrente = JSON.parse (usuarioCorrenteJSON);
     }
-    
+
     // PARTE 2 - INICIALIZA BANCO DE DADOS DE USUÁRIOS
     // Obtem a string JSON com os dados de usuários a partir do localStorage
     var usuariosJSON = localStorage.getItem('db_usuarios');
 
     // Verifica se existem dados já armazenados no localStorage
     if (!usuariosJSON) {  // Se NÃO há dados no localStorage
-        
+
         // Informa sobre localStorage vazio e e que serão carregados os dados iniciais
         alert('Dados de usuários não encontrados no localStorage. \n -----> Fazendo carga inicial.');
 
@@ -68,7 +68,7 @@ function initLoginApp () {
         localStorage.setItem('db_usuarios', JSON.stringify (dadosIniciais));
     }
     else  {  // Se há dados no localStorage
-        
+
         // Converte a string JSON em objeto colocando no banco de dados baseado em JSON
         db_usuarios = JSON.parse(usuariosJSON);    
     }
@@ -77,19 +77,19 @@ function initLoginApp () {
 
 // Verifica se o login do usuário está ok e, se positivo, direciona para a página inicial
 function loginUser (login, senha) {
-    
+
     // Verifica todos os itens do banco de dados de usuarios 
     // para localizar o usuário informado no formulario de login
     for (var i = 0; i < db_usuarios.usuarios.length; i++) {
         var usuario = db_usuarios.usuarios[i];
-        
+
         // Se encontrou login, carrega usuário corrente e salva no Session Storage
         if (login == usuario.login && senha == usuario.senha) {
             usuarioCorrente.id = usuario.id;
             usuarioCorrente.login = usuario.login;
             usuarioCorrente.email = usuario.email;
             usuarioCorrente.nome = usuario.nome;
-            
+
             // Salva os dados do usuário corrente no Session Storage, mas antes converte para string
             sessionStorage.setItem ('usuarioCorrente', JSON.stringify (usuarioCorrente));
 
@@ -110,11 +110,11 @@ function logoutUser () {
 }
 
 function addUser (nome, login, senha, email) {
-    
+
     // Cria um objeto de usuario para o novo usuario 
     let newId = generateUUID ();
     let usuario = { "id": newId, "login": login, "senha": senha, "nome": nome, "email": email };
-    
+
     // Inclui o novo usuario no banco de dados baseado em JSON
     db_usuarios.usuarios.push (usuario);
 

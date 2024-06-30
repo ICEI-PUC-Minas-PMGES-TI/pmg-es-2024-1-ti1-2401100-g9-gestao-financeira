@@ -286,36 +286,607 @@ Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as ne
 
 ## Plano de Testes
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Abaixo estão descritos os cenários de testes das interfaces da aplicação.
 
-> Enumere quais cenários de testes foram selecionados para teste. Neste
-> tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo
-> de usuários que foi escolhido para participar do teste e as
-> ferramentas utilizadas.
-> 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
+Cada cenário de teste segue o seguinte modelo: 
 
-## Ferramentas de Testes (Opcional)
+* Nome do Cenário de Teste
+* Descrição
+* Premissas
+* Casos de Teste
+* Passos dos casos de teste
 
-......  COLOQUE AQUI O SEU TEXTO ......
 
-> Comente sobre as ferramentas de testes utilizadas.
-> 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+# Cenário de Teste: Cadastro de usuário com sucesso
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro com sucesso de um novo usuário na aplicação.
+
+Premissas:
+
+* Acesso ao aplicativo
+* Dados: Nome, E-mail e Senha
+
+CT 01 - Acessar o site
+
+* Acessar o site atráves do Url do site.
+
+CT 02 - Acessar opção "Cadastre-se" na tela inicial
+
+* Após carregas a página inicial, selecionar a opção "Cadastre-se"
+
+CT 03 - Preencher o formulário de cadastro
+
+* Preencher o campo "Usuário"
+* Preencher o campo "Nome completo"
+* Preencher o campo "Email"
+* Preencher o campo "Senha"
+* Preencher o campo "Confirmar senha"
+
+CT 04 - Clicar no botão "Salvar" e validar retorno
+
+* Clicar no botão "Salvar"
+* Validar mensagem de "Cadastro realizado com sucesso"
+
+# Cenário de Teste: Cadastro de usuário sem sucesso
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro sem sucesso de um usuário na aplicação, ou seja, o formulário deverá recusar a tentativa do cadastro.
+
+Premissas:
+
+* Acesso ao Site
+* Dados: Nome, E-mail e Senha
+
+CT 01 - Abrir o Site
+
+* Acessar o site atráves da Url
+
+CT 02 - Acessar a opção "Cadastre-se" na tela inicial
+
+* Após carregar a página inicial, selecionar a opção "Cadastre-se"
+
+CT 03 - Preencher apenas dois campos do formulário
+
+* Preencher o campo "Nome"
+* Preencher o campo "E-mail"
+
+CT 04 - Clicar no botão "Cadastrar" e validar retorno
+
+* Clicar no botão "Cadastrar"
+* Validar mensagem de "todos os campos precisam ser preenchidos para se cadastrar"
+
+# Cenário de Teste: Login de usuário com sucesso
+
+Descrição:
+
+* Esse cenário almeja realizar o login com sucesso de um usuário.
+
+Premissas:
+
+* Acesso ao Site
+* Um usuário já cadastrado na aplicação
+* Dados do usuário cadastrado: E-mail e Senha
+
+CT 01 - Abrir o site
+
+* Acessar o site através da Url
+
+CT 02 - Acessar a opção "Faça Login" na tela inicial
+
+* Após carregar a página inicial, selecionar a opção "Fazer Login"
+
+CT 03 - Preencher os campos de e-mail e senha
+
+* Preencher o campo "E-mail"
+* Preencher o campo "Senha"
+
+CT 04 - Clicar no botão "Fazer Login" e validar retorno
+
+* Clicar no botão "Fazer Login"
+* Validar mensagem de "Logado com sucesso"
+
+# Cenário de Teste: Login de usuário sem sucesso
+
+Descrição:
+
+* Esse cenário almeja realizar o login sem sucesso de um usuário, ou seja, recusar o login do usuário por dados errados inseridos.
+
+Premissas:
+
+* Acesso ao site
+* Dados: E-mail e Senha
+
+CT 01 - Abrir o site
+
+* Acessar o site através da url
+
+CT 02 - Acessar a opção "Faça Login" na tela inicial
+
+* Após carregar a página inicial, selecionar a opção "Fazer Login"
+
+CT 03 - Preencher os campos de e-mail e senha com dados errados
+
+* Preencher o campo "E-mail" com e-mail não cadastrado
+* Preencher o campo "Senha" com senha incorreta
+
+CT 04 - Clicar no botão "Fazer Login" e validar retorno
+
+* Clicar no botão "Fazer Login"
+* Validar mensagem de "Login falhou! Confira os dados inseridos e tente novamente".
+
+# Cenário de Teste: Cadastro de Movimentação Financeira
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de uma movimentação financeira a partir dos dados fornecidos pelo usuário.
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Dados: data, valor, titulo da movimentação
+
+CT 01 - Acessar a funcionalidade "Movimentações"
+
+* Acessar o campo "Movimentações" na tela incial após login
+
+CT 02 - Acessar a opção "Cadastrar Nova Movimentação" na tela inicial
+
+* Após carregar a tela inicial da pagina de movimentações acessar a opção "Cadastrar Nova Movimentação"
+
+CT 03 - Preencher os campos de data, despera ou receita, valor, título, definir recorrência e descrição
+
+* Preencher o campo "Data" com a data desejada
+* Preencher o campo "Despesa ou receita" de acordo com o tipo da movimentação
+* Preencher o campo "Valor" com o valor da movimentação
+* Preencher o campo "Título" com o título da movimentação
+* Selecionar o campo "Definir recorrência" sendo ativado como recorrente. 
+* Preencher o campo "Descrição" com o detalhamento sobre aquela movimentação
+
+CT 04 - Clicar no botão "Criar" e validar retorno
+
+* Clicar no botão "Criar"
+* Validar mensagem de "Nova movimentação cadastrada com sucesso!".
+
+# Cenário de Teste: Cadastro de Movimentação Financeira sem sucesso
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de movimentação sem sucesso
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "Movimentações"
+
+* Acessar o campo "Movimentações" na tela incial após login
+
+CT 02 - Acessar a opção "Cadastrar Nova Movimentação" na tela inicial
+
+* Após carregar a tela inicial da pagina de movimentações acessar a opção "Cadastrar Nova Movimentação"
+
+CT 03 - Não preencher os campos de data, despera ou receita, valor, título, definir recorrência e descrição
+
+* Não Preencher o campo "Data" com a data desejada
+* Não Preencher o campo "Despesa ou receita" de acordo com o tipo da movimentação
+* Não Preencher o campo "Valor" com o valor da movimentação
+* Não Preencher o campo "Título" com o título da movimentação
+* Não Selecionar o campo "Definir recorrência" sendo ativado como recorrente. 
+* Não Preencher o campo "Descrição" com o detalhamento sobre aquela movimentação
+
+CT 04 - Clicar no botão "Criar" e validar retorno
+
+* Clicar no botão "Criar"
+* Validar mensagem de "Dados inválidos".
+
+# Cenário de Teste: Cadastro de Categoria de Pagamento
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de uma categoria de pagamento.
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Cadastrar" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Cadastrar"
+
+CT 03 - Preencher os campos Nome e Categoria
+
+* Preencher o campo "Nome" com o titulo do pagamento
+* Preencher o campo "Categoria" com a categoria desejada
+
+CT 04 - Clicar no botão "Cadastrar Categoria" e validar retorno
+
+* Clicar no botão "Cadastrar categoria"
+* Validar lista na tela inicial mostrando a categoria inserida
+
+# Cenário de Teste: Edição de Categoria de Pagamento 
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de uma categoria de pagamento sem sucesso
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Ter uma categoria já cadastrada
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Editar" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Editar"
+
+CT 03 - Preencher os campos Nome e Categoria
+
+* Preencher o campo "Nome" com o nome alternativo
+* Preencher o campo "Categoria" com a nova categoria 
+
+CT 04 - Clicar no botão "Atualizar" e validar retorno
+
+* Clicar no botão "Atualizar"
+* Validar lista na tela inicial mostrando a categoria com os novos dados
+
+# Cenário de Teste: Exclusão de Categoria de Pagamento 
+
+Descrição:
+
+* Esse cenário almeja realizar a exclusão de uma categoria cadastrada
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Ter uma categoria já cadastrada
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Excluir" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Excluir"
+
+CT 03 - Confirmar a exlusão
+
+* Selecionar o campo "OK"
+* Validar mensagem de "Deseja excluir um pagamento pendente?".
+
+CT 04 - Clicar no botão "OK" e validar retorno
+
+* Clicar no botão "OK"
+* Validar a exclusão daquala categoria
+
+# Cenário de Teste: Cadastro de Pagamento Pendente
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de um pagamento pendente
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Cadastrar" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Cadastrar"
+
+CT 03 - Preencher os campos Nome e Valor
+
+* Preencher o campo "Nome" com o titulo do pagamento
+* Preencher o campo "Valor" com o valor relacionado
+
+CT 04 - Clicar no botão "Cadastrar Pagamento" e validar retorno
+
+* Clicar no botão "Cadastrar pagamento"
+* Validar lista na tela inicial mostrando o pagamento inserido
+
+# Cenário de Teste: Edição de Pagamento Pendente
+
+Descrição:
+
+* Esse cenário almeja realizar a edição um pagamento pendente
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Ter um pagamento já cadastrado
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Editar" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Editar"
+
+CT 03 - Preencher os campos Nome e Valor
+
+* Preencher o campo "Nome" com o nome alternativo
+* Preencher o campo "Valor" com o novo valor
+
+CT 04 - Clicar no botão "Atualizar" e validar retorno
+
+* Clicar no botão "Atualizar"
+* Validar lista na tela inicial mostrando a categoria com os novos dados
+
+# Cenário de Teste: Exclusão de Pagamento Pendente
+
+Descrição:
+
+* Esse cenário almeja realizar a exclusão de um pagamento cadastrado
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Ter um pagamento já cadastrado
+
+CT 01 - Acessar a funcionalidade "Pagamentos"
+
+* Acessar o campo "Pagamentos" na tela incial após login
+
+CT 02 - Acessar a opção "Excluir" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Excluir"
+
+CT 03 - Confirmar a exclusão
+
+* Selecionar o campo "OK"
+* Validar mensagem de "Deseja excluir um pagamento pendente?".
+
+CT 04 - Clicar no botão "OK" e validar retorno
+
+* Clicar no botão "OK"
+* Validar a exclusão daquala categoria
+
+# Cenário de Teste: Cadastro de Metas Financeiras
+
+Descrição:
+
+* Esse cenário almeja realizar o cadastro de uma meta financeira
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "Metas"
+
+* Acessar o campo "Metas" na tela incial após login
+
+CT 02 - Acessar a opção "Cadastrar" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Cadastrar"
+
+CT 03 - Preencher os campos Nome, objetivo, valor
+
+* Preencher o campo "Nome da Meta" com o titulo da meta
+* Preencher o campo "Objetivo" com o objetivo relacionado
+* Preencher o campo "Valor inicial" com o valor relacionado
+
+CT 04 - Clicar no botão "Cadastrar" e validar retorno
+
+* Clicar no botão "Cadastrar"
+* Validar mensagem de "Meta salva com sucesso!"
+
+# Cenário de Teste: Edição de metas financeiras
+
+Descrição:
+
+* Esse cenário almeja realizar a edição de metas já cadastradas
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Possuir uma meta já cadastrada
+
+CT 01 - Acessar a funcionalidade "Metas"
+
+* Acessar o campo "Metas" na tela incial após login
+
+CT 02 - Acessar a opção "Editar(icone de lápis)" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Editar(icone de lápis)"
+
+CT 03 - Preencher os campos Nome e objetivo
+
+* Preencher o campo "Nome da Meta" com o titulo da meta
+* Preencher o campo "Objetivo" com o objetivo relacionado
+
+CT 04 - Clicar no botão "Editar" e validar retorno
+
+* Clicar no botão "Editar"
+* Validar mensagem de "Meta atualizada com sucesso!"
+
+# Cenário de Teste: Acrescimo e Decrescimo no valor insirido nas metas cadastradas
+
+Descrição:
+
+* Esse cenário almeja realizar a adição ou redução dos valores nas metas cadastradas
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Possuir uma meta já cadastrada
+
+CT 01 - Acessar a funcionalidade "Metas"
+
+* Acessar o campo "Metas" na tela incial após login
+
+CT 02 - Acessar a opção "(+) ou (-)" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "(+) ou (-)"
+
+CT 03 - Preencher o campo de valor
+
+* Preencher o campo "Decréscimo Monetario/Acréscimo Monetario" com o valor relacionado
+
+CT 04 - Clicar no botão "Atualizar" e validar retorno
+
+* Clicar no botão "Atualizar"
+* Validar mensagem de "Valor atualizado com sucesso!"
+
+# Cenário de Teste: Exclusão de Meta Financeira
+
+Descrição:
+
+* Esse cenário almeja realizar a exclusão de uma meta financeira cadastrada
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+* Ter um pagamento já cadastrado
+
+CT 01 - Acessar a funcionalidade "Metas"
+
+* Acessar o campo "Metas" na tela incial após login
+
+CT 02 - Acessar a opção "Excluir(simbolo de lixeira)" na tela inicial 
+
+* Após carregar a tela inicial da pagina de Pagamentos acessar a opção "Excluir(simbolo de lixeira)"
+
+CT 03 - Validar retorno
+
+* Validar a exclusão daquala categoria ausente
+
+# Cenário de Teste: Sugestão Financeira
+
+Descrição:
+
+* Esse cenário almeja sugerir uma direção finaceira a pártir de um objetivo cadastrado
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "investimentos"
+
+* Acessar o campo "Investimentos" na tela incial após login
+
+CT 02 - Preencher os campos Objetivo, tempo, risco e valor
+
+* Preencher o campo "Objetivo Financeiro" com o valor objetivo
+* Preencher o campo "Meses Disponiveis para o investimento" com os meses de prazo
+* Preencher o campo "Escolhar o risco de investimento" com o grau de risco 
+* Preencher o campo "Valor dos aportes" com o valor relacionado
+
+CT 03 - Clicar no botão "Sugerir" e validar retorno
+
+* Clicar no botão "Sugerir"
+* Validar mensagem de sugestão apresentada.
+
+# Cenário de Teste: Simular Investimento
+
+Descrição:
+
+* Esse cenário almeja realizar simulação de um investimento baseado em algumas metricas fincanceiras
+
+Premissas:
+
+* Acesso ao site
+* Usuário já logado no site
+
+CT 01 - Acessar a funcionalidade "Simulação"
+
+* Acessar o campo "Simulação" na tela incial após login
+
+CT 02 - Preencher os campos valores, tipo de aplicação e tempo
+
+* Preencher o campo "Valor aplicado Inicialmente" com o valor inicial
+* Preencher o campo "Valor dos aportes mensais" com o valor dos aportes
+* Preencher o campo "Tipos de aplicação" com o tipo de métrica
+* Preencher o campo "Tempo de aplicação" com o tempo de aplicação
+
+CT 04 - Clicar no botão "Calcular" e validar retorno
+
+* Clicar no botão "Calcular"
+* Validar resultado apresentado baseado nos dados inseridos
+
 
 ## Registros de Testes
 
-......  COLOQUE AQUI O SEU TEXTO ......
+Registro de Testes de Usabilidade - Finny 
 
-> Discorra sobre os resultados do teste. Ressaltando pontos fortes e
-> fracos identificados na solução. Comente como o grupo pretende atacar
-> esses pontos nas próximas iterações. Apresente as falhas detectadas e
-> as melhorias geradas a partir dos resultados obtidos nos testes.
+Participante 1
+
+Feedback:
+
+Acesso ao aplicativo foi fácil e rápido.
+Adicionar uma movimentação financeira foi bem intuitivo, o botão "Cadastrar" estava bem visível.
+Editar uma movimentação foi simples, o botão "Atualizar" está bem destacado.
+Remover uma nota foi direto, o campo de "Excluir" era claro com cores relacionais.
+No geral, a funcionalidade é bastante útil para organizar minhas movimentações fincanceiras.
+
+Participante 2
+
+Feedback:
+
+Encontrei dificuldades para fazer login no aplicativo, não encontrei como eu poderia recuperar minha senha.
+Uma vez logado, a navegação foi tranquila.
+Adicionar um pagamento foi simples e direto, sem complicações.
+Editar um pagamento temabém foi tranquilo, o botão "Atualizar" cumpre seu papel.
+Remover um pagamento foi fácil e rápido.
+Acho que com um pouco de prática, o aplicativo seria muito útil para organizar finanças.
+
+Participante 3
+
+Feedback:
+
+O processo de login foi suave, sem problemas.
+A interface para adicionar metas era clara e fácil de entender.
+Edição de metas foi simples, e o botão "Cadastrar" estava bem evidente.
+Remoção de metas foi direta e intuitiva.
+Achei a linha de progressão de objetivo muito importante e recompensadora.
+No geral, gostei da experiência e consideraria usar o aplicativo para minha organização pessoal.
+
+Participante 4
+
+Feedback:
+
+Acesso ao aplicativo foi fácil.
+Registrar uma categoria foi fácil e intuitivo, o campo "Insira o valor" e o botão "Adicionar categoria" estavam bem visíveis.
+Editar uma categoria foi simples e eficiente, com a opção de edição acessível diretamente na lista de categorias.
+Excluir uma categoria foi rápido e eficiente, gostei da segunda confirmação, evita uma exclusão errada.
+A experiência geral de usar a funcionalidade de cadastro de categorias é positiva, contribuindo para um melhor controle financeiro.
+
+Participante 5
+
+Feedback:
+
+O processo de login foi eficaz.
+Simular um investimento foi simple e eficaz.
+A escolha do tipo de aplicação é bem clara, mas poderia haver mais opções de métricas.
+Gostei que o resultado é exibido na prórpia página, mas gostaria de explorar mais as possíbilidades de váriação.
+O aplicativo permite adicionar descrição às despesas, o que ajuda a contextualizar cada gasto.
+A experiência geral de usar a funcionalidade de simulação de invesitimentos é positiva e consideraria usar para meu controle pessoal.
+
 
 
 # Referências
