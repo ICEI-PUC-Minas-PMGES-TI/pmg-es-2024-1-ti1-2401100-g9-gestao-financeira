@@ -971,11 +971,18 @@ A experiência geral de usar a funcionalidade de simulação de invesitimentos �
 
 # Referências
 
-......  COLOQUE AQUI O SEU TEXTO ......
+W3C - World Wide Web Consortium: https://www.w3.org/
+Diretrizes de Acessibilidade para Conteúdo Web (WCAG): https://www.w3.org/TR/WCAG21/
+HTML5: https://dev.w3.org/html5/spec-LC/
+CSS3: https://www.w3schools.com/cssref/index.php
 
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados
-> no desenvolvimento do trabalho.
-> 
+Bootstrap: https://getbootstrap.com/docs/5.0/
+GIMP: https://www.gimp.org/
+Git: https://git-scm.com/
+Visual Studio Code: https://code.visualstudio.com/
+Stack Overflow: https://pt.stackoverflow.com/
+MDN Web Docs: https://developer.mozilla.org/pt-BR/docs
+
 > **Links Úteis**:
 > - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
 > - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
