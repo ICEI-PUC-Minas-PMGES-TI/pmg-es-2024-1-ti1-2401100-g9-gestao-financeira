@@ -361,7 +361,7 @@ A escolha das tecnologias utilizadas no Finny foi criteriosa e visou garantir um
 
  **Diagrama de Arquitetura**:
 
- ![Arquitetura](images/Diagrama003.png)
+ ![Arquitetura](images/Diagrama03.png)
 
 
 # Avaliação da Aplicação
