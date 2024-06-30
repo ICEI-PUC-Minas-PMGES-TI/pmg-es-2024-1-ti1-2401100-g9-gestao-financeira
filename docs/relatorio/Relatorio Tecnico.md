@@ -366,12 +366,6 @@ A escolha das tecnologias utilizadas no Finny foi criteriosa e visou garantir um
 
 # Avaliação da Aplicação
 
-......  COLOQUE AQUI O SEU TEXTO ......
-
-> Apresente os cenários de testes utilizados na realização dos testes da
-> sua aplicação. Escolha cenários de testes que demonstrem os requisitos
-> sendo satisfeitos.
-
 ## Plano de Testes
 
 Abaixo estão descritos os cenários de testes das interfaces da aplicação.
