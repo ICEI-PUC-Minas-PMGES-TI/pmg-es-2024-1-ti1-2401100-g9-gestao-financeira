@@ -346,7 +346,7 @@ O Finny foi desenvolvido com foco em acessibilidade, utilizando cores e contrast
 As tecnologias mencionadas acima podem sofrer alterações no futuro, de acordo com as necessidades do projeto e as melhores práticas de desenvolvimento.
 Diagrama de Fluxo de Usuário:
 
-![imagem](./images/Captura%20de%20Tela%202024-06-30%20às%2010.53.54.png)
+![imagem](./images/Diagrama002.png)
 
 Considerações Adicionais:
 
@@ -361,7 +361,7 @@ A escolha das tecnologias utilizadas no Finny foi criteriosa e visou garantir um
 
  **Diagrama de Arquitetura**:
 
- ![Arquitetura](images/Captura%20de%20Tela%202024-06-30%20às%2014.35.23.png)
+ ![Arquitetura](images/Diagrama003.png)
 
 
 # Avaliação da Aplicação
