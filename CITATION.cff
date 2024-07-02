@@ -1,6 +1,6 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: Aplicativo de gestão de finanças
+title: Finny
 authors:
   - family-names: Aguiar França
     given-names: Marcos Henrique 
@@ -20,12 +20,12 @@ authors:
     given-names: Simone Alves
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names:  Osório Pereira
+    family-names: Osório Pereira
     given-names: Daniel Machado 
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: de Faria Barros
-    given-names:  Diego Augusto
+    given-names: Diego Augusto
  - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Seufitelli
