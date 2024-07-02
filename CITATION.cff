@@ -14,7 +14,7 @@ authors:
     given-names: Nicolas Araújo
   - family-names: Ramos Souza
     given-names: Gabriel Azeredo
- - name-suffix: Professor
+  - name-suffix: Professor
     affiliation: PUC Minas
   - family-names: Nogueira
     given-names: Simone Alves
@@ -26,7 +26,7 @@ authors:
     affiliation: PUC Minas
     family-names: de Faria Barros
     given-names: Diego Augusto
- - name-suffix: Professor
+  - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Seufitelli
     given-names: Danilo Boechat 
